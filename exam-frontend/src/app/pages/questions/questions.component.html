@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <a [routerLink]="['/add-question']" class="btn btn-sm btn-primary float-end my-2">Add New</a>
+    <h4>List of Questions</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Sr.No.</th>
+                <th>Question</th>
+                <th>Options</th>
+                <th>Answer</th>
+                <th>Marks</th>
+                <th>Subject</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of list; track $index) {
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{item.description}}</td>
+                    <td>
+                        <ol>
+                            <li>{{item.option1}}</li>
+                            <li>{{item.option2}}</li>
+                            <li>{{item.option3}}</li>
+                            <li>{{item.option4}}</li>
+                        </ol>
+                    </td>
+                    <td>{{item.answer}}</td>
+                    <td>{{item.marks}}</td>
+                    <td>{{item.category.name}}</td>
+                    <td><button class="btn btn-danger btn-sm" (click)="deleteQuestion(item.id)"> Delete</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

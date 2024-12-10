@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h6>Exam Started</h6>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="qg" (submit)="submitExam(this.qg.value)">
+                    @for (item of items; track $index) {
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                <table class="table table-borderless table-sm">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:50px">Q.{{$index+1}}</td>
+                                        <td>{{item.description}} <div class="float-end">Marks:{{item.marks}}</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.</td>
+                                        <td>
+                                            <label>
+                                            <input type="radio" id="{{item.id}}" value="1" name="{{item.id}}" formControlName="{{item.id}}">
+                                                {{item.option1}}
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>B.</td>
+                                        <td><label>
+                                            <input type="radio" id="{{item.id}}" value="2" name="{{item.id}}" formControlName="{{item.id}}">
+                                                {{item.option2}}
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>C.</td>
+                                        <td><label>
+                                            <input type="radio" id="{{item.id}}" value="3" name="{{item.id}}" formControlName="{{item.id}}">
+                                                {{item.option3}}
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>D.</td>
+                                        <td><label>
+                                            <input type="radio" id="{{item.id}}" value="4" name="{{item.id}}" formControlName="{{item.id}}">
+                                                {{item.option4}}
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    }
+
+                    <button class="btn btn-sm btn-primary float-end">Submit Exam</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

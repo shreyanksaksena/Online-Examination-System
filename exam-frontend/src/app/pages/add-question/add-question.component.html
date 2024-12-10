@@ -1,0 +1,103 @@
+<app-navbar></app-navbar>
+<div class="row">
+  <div class="col-sm-4 mx-auto">
+    <div class="card shadow" style="margin-top: 10px">
+      <div class="card-header bg-white">
+        <h4>Student Registeration</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="fg" (submit)="saveQuestion(fg.value)" novalidate>
+            <div class="mb-2">
+              <select
+                formControlName="catid"
+                required
+                name="catid"
+                class="form-control"
+                >
+                <option value="">Select Subject</option>
+                @for (item of cats; track $index) {
+                    <option value="{{item.id}}">{{item.name}}</option>
+                }
+            </select>
+            </div>
+            <div class="mb-2">
+              <input
+                type="text"
+                formControlName="description"
+                required
+                name="description"
+                placeholder="description"
+                class="form-control"
+                />
+            </div>
+            <div class="mb-2">
+                <input
+                  type="text"
+                  formControlName="option1"
+                  required
+                  name="option1"
+                  placeholder="option1"
+                  class="form-control"
+                  />
+              </div>
+            <div class="mb-2">
+                <input
+                  type="text"
+                  formControlName="option2"
+                  required
+                  name="option2"
+                  placeholder="option2"
+                  class="form-control"
+                  />
+              </div>
+            <div class="mb-2">
+                <input
+                  type="text"
+                  formControlName="option3"
+                  required
+                  name="option3"
+                  placeholder="option3"
+                  class="form-control"
+                  />
+              </div>
+            <div class="mb-2">
+                <input
+                  type="text"
+                  formControlName="option4"
+                  required
+                  name="option4"
+                  placeholder="option4"
+                  class="form-control"
+                  />
+              </div>
+            <div class="mb-2">
+                <select
+                  formControlName="answer"
+                  required
+                  name="answer"
+                  class="form-control"
+                  >
+                  <option value="">Select Correct Answer</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+            <div class="mb-2">
+                <input
+                  type="number"
+                  min="1"
+                  formControlName="marks"
+                  required
+                  name="marks"
+                  placeholder="marks"
+                  class="form-control"
+                  />
+              </div>
+              <button class="btn btn-primary float-end">Submit</button>
+        </form>
+        </div>
+    </div>
+    </div>
+</div>

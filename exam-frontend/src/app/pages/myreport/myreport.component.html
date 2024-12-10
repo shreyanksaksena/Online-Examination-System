@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h4 class="text-center p-2">Exam Report</h4>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>Subject</td>
+                <td>{{data.category.name}}</td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td>{{data.result}}</td>
+            </tr>
+            <tr>
+                <td>Total Marks</td>
+                <td>{{data.totalmarks}}</td>
+            </tr>
+            <tr>
+                <td>Marks Obtained</td>
+                <td>{{data.testScore}}</td>
+            </tr>
+            <tr>
+                <td>Test Date</td>
+                <td>{{data.testDate | date: 'dd-MMM-yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
